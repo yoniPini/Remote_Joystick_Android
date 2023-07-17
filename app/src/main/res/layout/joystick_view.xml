@@ -1,0 +1,54 @@
+<FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_height="320dp" android:id="@+id/all_joystick_and_seekBars" android:layout_width="match_parent">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="320dp"
+            android:layout_height="320dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
+
+            <FrameLayout
+                    android:layout_width="300dp"
+                    android:layout_height="300dp" android:id="@+id/joystick_frame" tools:visibility="visible"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+                <FrameLayout
+                        android:layout_width="200dp"
+                        android:layout_height="200dp" android:layout_gravity="center">
+
+                    <FrameLayout
+                            android:layout_width="150dp"
+                            android:layout_height="150dp" android:background="#8A0CC19D" android:id="@+id/green_frame">
+
+                        <ImageView
+                                android:layout_width="55dp"
+                                android:layout_height="55dp"
+                                app:srcCompat="@android:drawable/presence_invisible"
+                                android:id="@+id/joystick_img"
+                                android:layout_gravity="center"/>
+                    </FrameLayout>
+                </FrameLayout>
+            </FrameLayout>
+            <SeekBar
+                    android:layout_width="200dp"
+                    android:layout_height="300dp" android:id="@+id/seekBar_value_b"
+                    android:rotation="270"
+                    android:progress="0" android:max="100"
+                    android:layout_gravity="top"
+                    android:visibility="visible" app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toEndOf="@+id/joystick_frame"
+                    android:layerType="software"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <SeekBar
+                android:layout_width="250dp"
+                android:layout_height="wrap_content" android:id="@+id/seekBar_value_a"
+                android:max="100" android:progress="50"
+                android:layout_gravity="center_horizontal|top"/>
+    </LinearLayout>
+
+</FrameLayout>
